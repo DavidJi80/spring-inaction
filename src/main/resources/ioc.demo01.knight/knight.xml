@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -13,7 +15,7 @@
     <bean id="knight" class="net.tongark.spring.ioc.demo01.knight.KnightOfTheRoundTable">
         <!--构造函数设置骑士的名字-->
         <constructor-arg>
-            <value>Bedivere</value>
+            <value>Bedivere2</value>
         </constructor-arg>
         <!--对应的set方法，给予骑士一个探险任务-->
         <property name="quest">
@@ -21,6 +23,10 @@
         </property>
     </bean>
 
-    <!-- more bean definitions go here -->
+    <!-- 为knight定义一个别名 -->
+    <alias name="knight" alias="knightOfTheRoundTable"/>
 
+    <!-- p 和 c 命名空间 -->
+    <bean id="knight2" class="net.tongark.spring.ioc.demo01.knight.KnightOfTheRoundTable" c:name="David"
+          p:quest-ref="quest"/>
 </beans>

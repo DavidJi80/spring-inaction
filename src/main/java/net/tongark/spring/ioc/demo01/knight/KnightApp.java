@@ -8,7 +8,7 @@ public class KnightApp {
         //加载上下文
         ApplicationContext context = new ClassPathXmlApplicationContext("ioc.demo01.knight/knight.xml");
         //获取Bean
-        Knight knight = context.getBean("knight", Knight.class);
+        Knight knight = context.getBean("knight2", Knight.class);
         //使用Bean
         knight.embarkOnQuest();
     }

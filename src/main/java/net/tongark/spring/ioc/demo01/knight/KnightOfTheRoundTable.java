@@ -23,7 +23,7 @@ public class KnightOfTheRoundTable implements Knight {
 
     @Override
     public Object embarkOnQuest() {
-        System.out.println("embarkOnQuest");
+        System.out.println(this.name+" embarkOnQuest");
         return quest.embark();
     }
 
