@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--定义一个探险任务-->
+    <bean id="quest" class="net.tongark.spring.ioc.demo01.knight.HolyGrailQuest">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!--定义一个骑士-->
+    <bean id="knight" class="net.tongark.spring.ioc.demo01.knight.KnightOfTheRoundTable">
+        <!--构造函数设置骑士的名字-->
+        <constructor-arg>
+            <value>Bedivere</value>
+        </constructor-arg>
+        <!--对应的set方法，给予骑士一个探险任务-->
+        <property name="quest">
+            <ref bean="quest"/>
+        </property>
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
