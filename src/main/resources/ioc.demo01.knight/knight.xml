@@ -3,8 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!--定义一个探险任务-->
     <bean id="quest" class="net.tongark.spring.ioc.demo01.knight.HolyGrailQuest">
@@ -29,4 +32,18 @@
     <!-- p 和 c 命名空间 -->
     <bean id="knight2" class="net.tongark.spring.ioc.demo01.knight.KnightOfTheRoundTable" c:name="David"
           p:quest-ref="quest"/>
+
+    <!-- 定义一个吟游诗人 -->
+    <bean id="minstrel" class="net.tongark.spring.ioc.demo01.knight.Minstrel"></bean>
+
+    <aop:config>
+        <!-- 声明一个Aspect -->
+        <aop:aspect ref="minstrel">
+            <!-- 定义一个Pointcut -->
+            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/>
+            <!-- 定义Advice -->
+            <aop:before pointcut-ref="embark" method="singBeforeQuest"/>
+            <aop:after pointcut-ref="embark" method="singAfterQuest"/>
+        </aop:aspect>
+    </aop:config>
 </beans>
