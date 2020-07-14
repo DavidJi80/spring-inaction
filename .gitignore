@@ -1,3 +1,6 @@
 /.idea/*
 /spring-inaction.iml
 /target/*
+
+/aop-annotation/target/*
+/aop-annotation/aop-annotation.iml

@@ -36,6 +36,7 @@
     <!-- 定义一个吟游诗人 -->
     <bean id="minstrel" class="net.tongark.spring.ioc.demo01.knight.Minstrel"></bean>
 
+    <!--AOP-->
     <aop:config>
         <!-- 声明一个Aspect -->
         <aop:aspect ref="minstrel">
