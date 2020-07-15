@@ -6,7 +6,11 @@
 
     <groupId>net.tongark.spring</groupId>
     <artifactId>spring-inaction</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>webmvc-config</module>
+    </modules>
 
     <name>spring-inaction</name>
 

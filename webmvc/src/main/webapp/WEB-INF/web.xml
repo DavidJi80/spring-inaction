@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <display-name>Spring Web MVC</display-name>
+
+    <!-- Spring加载的xml文件,不配置默认为applicationContext.xml -->
+    <!-- 该类作为spring的listener使用，它会在创建时自动查找web.xml配置的applicationContext.xml文件 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/app-context.xml</param-value>
+    </context-param>
+
+    <!-- 配置Sping MVC的DispatcherServlet -->
+    <servlet>
+        <servlet-name>app</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- spring MVC的配置文件 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
+        <!-- 表示启动容器时初始化该Servlet -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>app</servlet-name>
+        <!-- url-pattern：表示哪些请求交给Spring Web MVC处理， “/” 是用来定义默认servlet映射的。 -->
+        <!-- 也可以如“*.html”表示拦截所有以html为扩展名的请求。 -->
+        <url-pattern>/app/*</url-pattern>
+    </servlet-mapping>
+</web-app>
