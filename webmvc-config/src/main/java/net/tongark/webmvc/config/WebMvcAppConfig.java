@@ -1,6 +1,7 @@
 package net.tongark.webmvc.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc //开启MVC配置
+@ComponentScan("net.tongark.webmvc.config") //自动检测扫描的包
 public class WebMvcAppConfig implements WebMvcConfigurer {
 
     @Bean
