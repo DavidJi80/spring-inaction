@@ -9,8 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/rest", method = RequestMethod.GET)
+@RequestMapping(value = "/rest")
 public class HelloRestController {
+
+    @GetMapping("/t?st.html")
+    public String uriWithQuestionMark(){
+        return "带?的，t?st.html";
+    }
 
     @GetMapping(path = "hello")
     public String testGetStr() {
@@ -30,4 +35,5 @@ public class HelloRestController {
             put("name", "springboot");
         }};
     }
+
 }
