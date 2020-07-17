@@ -1,5 +1,6 @@
 package net.tongark.webmvc.config;
 
+import net.tongark.webmvc.config.configurers.WebMvcAppConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebMvcApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -11,7 +12,7 @@ public class WebMvcApplicationInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{WebMvcAppConfig.class};
+        return new Class<?>[]{WebMvcAppConfigurer.class};
     }
 
     @Override
