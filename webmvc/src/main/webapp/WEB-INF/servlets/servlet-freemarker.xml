@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 启动Spring MVC注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!-- 配置自动扫描的包 -->
+    <context:component-scan base-package="net.tongark.spring.webmvc"></context:component-scan>
+
+    <!-- 在视图解析器中注册 FreeMarker -->
+    <mvc:view-resolvers>
+        <mvc:freemarker/>
+    </mvc:view-resolvers>
+    <!-- 配置 FreeMarker... -->
+    <mvc:freemarker-configurer>
+        <mvc:template-loader-path location="/WEB-INF/views/freemarker"/>
+    </mvc:freemarker-configurer>
+
+</beans>
