@@ -62,6 +62,13 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+        <!--Remote Web Service API-->
+        <dependency>
+            <groupId>net.tongark.spring</groupId>
+            <artifactId>web-service-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -7,7 +7,7 @@
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/servlets/servlet-freemarker.xml</param-value>
+        <param-value>/WEB-INF/servlets/servlet-rmi-client.xml</param-value>
     </context-param>
 
     <!-- 配置Sping MVC的DispatcherServlet -->

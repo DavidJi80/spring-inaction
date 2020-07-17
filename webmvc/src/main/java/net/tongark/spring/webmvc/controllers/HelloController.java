@@ -1,4 +1,4 @@
-package net.tongark.spring.webmvc;
+package net.tongark.spring.webmvc.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

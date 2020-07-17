@@ -1,4 +1,4 @@
-package net.tongark.spring.webmvc.freemarker;
+package net.tongark.spring.webmvc.controllers.freemarker;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
