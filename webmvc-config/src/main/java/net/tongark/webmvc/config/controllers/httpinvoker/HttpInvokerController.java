@@ -1,4 +1,4 @@
-package net.tongark.spring.webmvc.controllers.rmi;
+package net.tongark.webmvc.config.controllers.httpinvoker;
 
 import net.tongark.spring.webservice.account.Account;
 import net.tongark.spring.webservice.account.AccountService;
@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@RestController
-@RequestMapping("/rmi")
-public class LinkRmiServiceController {
-
+@RestController
+@RequestMapping("httpinvoer")
+public class HttpInvokerController {
     @Autowired
     private AccountService accountService;
 

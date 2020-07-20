@@ -7,7 +7,7 @@
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/servlets/hessian-server-servlet.xml</param-value>
+        <param-value>/WEB-INF/servlets/http-invoker-client-servlet.xml</param-value>
     </context-param>
 
     <!-- 配置Sping MVC的DispatcherServlet -->

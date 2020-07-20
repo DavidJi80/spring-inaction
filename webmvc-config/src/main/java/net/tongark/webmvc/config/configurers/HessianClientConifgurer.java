@@ -10,7 +10,7 @@ public class HessianClientConifgurer {
     @Bean
     public HessianProxyFactoryBean accountService(){
         HessianProxyFactoryBean factoryBean=new HessianProxyFactoryBean();
-        factoryBean.setServiceUrl("http://localhost:8080/webmvc/remoting/AccountService");
+        factoryBean.setServiceUrl("http://127.0.0.1:12710/AccountService");
         factoryBean.setServiceInterface(net.tongark.spring.webservice.account.AccountService.class);
         return factoryBean;
     }
